@@ -1,0 +1,22 @@
+{
+  "name": "leaflet.beforeafter",
+  "description": "Add functionality like the jquery BeforeAfter plugin to leaflet layers. Inspired by https://www.mapbox.com/mapbox.js/example/v1.0.0/swipe-layers/"
+  "authors": [
+    "Michiel Van den Berghe <michiel.vdb@gmail.com>"
+  ],
+  "keywords": [
+    "leaflet",
+    "before",
+    "after",
+    "comparison"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html"
+  ]
+}

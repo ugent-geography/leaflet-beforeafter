@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Leaflet.beforeafter</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet-src.js"></script>
+
+        <script src="dist/leaflet.beforeafter.js"></script>
+    </head>
+    <body>
+        <div id="map" style="height: 600px;"></div>
+        <script type="text/javascript">
+            var map = L.map('map', {
+                zoomControl: false,
+                beforeAfter: true
+            }).setView([51.02435, 3.71018], 17);
+
+            var osm = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpeg', {
+                attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                subdomains: '1234'
+            }).addTo(map);
+
+            var esri = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            }).addTo(map);
+
+            map.beforeAfter.left([esri]);
+
+        </script>
+    </body>
+</html>
